@@ -1120,13 +1120,24 @@ function TellMeWhen_Icon_Update(icon, groupID, iconID)
 -- SPELL COOLDOWN
 -- --------------
 			if (icon.CooldownType == "spell") then
+				local nameList = TellMeWhen_GetSpellNames(icon,icon.Name)
+				local nameNameList = TellMeWhen_GetSpellNames(icon,icon.Name,nil,true)
 				
+				icon.NameFirst = nameList[1]
+				icon.NameName = nameNameList[1]
 				icon.IsChakra = false
 				icon.ChakraActive = true
-				icon.NameFirst = TellMeWhen_GetSpellNames(icon,icon.Name,1)
-				icon.NameName = TellMeWhen_GetSpellNames(icon,icon.Name,1,true)
-
-				icon.texture:SetTexture(GetSpellTexture(icon.NameFirst) or "Interface\\Icons\\INV_Misc_QuestionMark")
+				
+				for i, iName in pairs(nameList) do
+					if (GetSpellInfo(iName)) then
+						icon.NameFirst = iName
+						icon.NameName = nameNameList[i]
+						icon.texture:SetTexture(GetSpellTexture(iName))
+						
+						break
+					end
+				end
+				
 				icon:SetScript("OnUpdate", TellMeWhen_Icon_SpellCooldown_OnUpdate)
 				TellMeWhen_Icon_Bars_Update(icon, groupID, iconID)
 				icon:RegisterEvent("SPELL_UPDATE_USABLE")
@@ -1574,6 +1585,13 @@ function TellMeWhen_Icon_SpellCooldown_OnUpdate(icon, elapsed)
 	local Name = icon.NameFirst
 	local NameName = icon.NameName
 	local startTime, duration = GetSpellCooldown(Name)
+	
+	if (not GetSpellInfo(Name)) then
+		icon:SetAlpha(0)
+		
+		return
+	end
+	
 	if duration and NameName then
 		if icon.ShowPBar then
 			PwrBarUpdate(icon,Name)
