@@ -153,6 +153,7 @@ L["ICONMENU_SHOWWHEN"] = "아이콘 표시되면" -- Needs review
 L["ICONMENU_SPELL"] = "철자 또는 능력" -- Needs review
 L["ICONMENU_STACKS_MAX_DESC"] = "아이콘을 표시하는 데 필요한 분위기의 스택의 최대수" -- Needs review
 L["ICONMENU_STACKS_MIN_DESC"] = "아이콘을 표시하는 데 필요한 분위기의 스택의 최소 번호" -- Needs review
+L["ICONMENU_TARGET_OR_FOCUS"] = "타겟 또는 포커스" -- Needs review
 L["ICONMENU_TARGETTARGET"] = "Targetstarget" -- Needs review
 L["ICONMENU_TOTEM"] = "/ 비 집고 양이인가 토템" -- Needs review
 -- L["ICONMENU_TOTEM_DESC"] = ""

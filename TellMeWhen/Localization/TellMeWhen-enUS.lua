@@ -68,6 +68,7 @@ L["ICONMENU_DISPEL"] = "Dispel Type"
 L["ICONMENU_CASTS"] = "Spell Casts"
 
 L["ICONMENU_UNIT"] = "Unit to watch"
+L["ICONMENU_TARGET_OR_FOCUS"] = "Target or focus"
 L["ICONMENU_TARGETTARGET"] = "Target's target"
 L["ICONMENU_FOCUSTARGET"] = "Focus' target"
 L["ICONMENU_PETTARGET"] = "Pet's target"

@@ -694,6 +694,7 @@ TMW.IconMenu_SubMenus = {
 		{ value = "targettarget", 	text = L["ICONMENU_TARGETTARGET"] },
 		{ value = "focus", 			text = FOCUS },
 		{ value = "focustarget", 	text = L["ICONMENU_FOCUSTARGET"] },
+		{ value = "target;focus",   text = L["ICONMENU_TARGET_OR_FOCUS"] },
 		{ value = "pet", 			text = PET },
 		{ value = "pettarget", 		text = L["ICONMENU_PETTARGET"] },
 		{ value = "mouseover", 		text = L["ICONMENU_MOUSEOVER"] },

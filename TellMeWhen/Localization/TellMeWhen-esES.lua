@@ -151,6 +151,7 @@ L["ICONMENU_SHOWWHEN"] = "Mostrar icono cuando" -- Needs review
 L["ICONMENU_SPELL"] = "hechizo o habilidad" -- Needs review
 L["ICONMENU_STACKS_MAX_DESC"] = "Cantidad máxima de las pilas del aura es necesario para mostrar el icono" -- Needs review
 L["ICONMENU_STACKS_MIN_DESC"] = "Número mínimo de las pilas del aura es necesario para mostrar el icono" -- Needs review
+L["ICONMENU_TARGET_OR_FOCUS"] = "El objectivo o enfoque" -- Needs review
 L["ICONMENU_TARGETTARGET"] = "El objectivo del objectivo" -- Needs review
 L["ICONMENU_TOTEM"] = "Totem / Ghoul no MoG" -- Needs review
 -- L["ICONMENU_TOTEM_DESC"] = ""

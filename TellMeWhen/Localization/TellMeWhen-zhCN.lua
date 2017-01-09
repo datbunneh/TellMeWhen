@@ -156,6 +156,7 @@ L["ICONMENU_SHOWWHEN"] = "当...时显示图标"
 L["ICONMENU_SPELL"] = "法术或技能"
 L["ICONMENU_STACKS_MAX_DESC"] = "显示图标的最低Buff或Debuff叠加层数"
 L["ICONMENU_STACKS_MIN_DESC"] = "显示图标的最低Buff或Debuff叠加层数"
+L["ICONMENU_TARGET_OR_FOCUS"] = "目標或焦點"
 L["ICONMENU_TARGETTARGET"] = "目标的目标"
 L["ICONMENU_TOTEM"] = "图腾/非猫食尸鬼" -- Needs review
 -- L["ICONMENU_TOTEM_DESC"] = ""

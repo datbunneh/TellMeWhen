@@ -1765,17 +1765,17 @@ function TellMeWhen_Icon_Buff_OnUpdate(icon, elapsed)
 	local texture = icon.texture
 	local us,un = icon.PresUsableAlpha,icon.AbsentUnUsableAlpha
 	for i, iName in pairs(icon.NameList) do
-		local buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = UnitAura(unit, nnl[i], nil, filter)
+		local buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = TellMeWhen_UnitAura(unit, nnl[i], nil, filter)
 		if TMW.DS[iName] then
 			for z=1,60 do --60 because i can and it breaks when there are no more buffs anyway
-				buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = UnitAura(unit, z, filter)
+				buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = TellMeWhen_UnitAura(unit, z, filter)
 				if (not buffName) or (dispelType == iName) then
 					break
 				end
 			end
 			if filterh and not buffName then
 				for z=1,60 do
-					buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = UnitAura(unit, z, filterh)
+					buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = TellMeWhen_UnitAura(unit, z, filterh)
 					if (not buffName) or (dispelType == iName) then
 						break
 					end
@@ -1783,18 +1783,18 @@ function TellMeWhen_Icon_Buff_OnUpdate(icon, elapsed)
 			end
 		end
 		if filterh and not buffName then
-			buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = UnitAura(unit, nnl[i], nil, filterh)
+			buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = TellMeWhen_UnitAura(unit, nnl[i], nil, filterh)
 		end
 		if buffName and not (id == iName) and tonumber(iName) then
 			for z=1,60 do
-				buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = UnitAura(unit, z, filter)
+				buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = TellMeWhen_UnitAura(unit, z, filter)
 				if (not id) or (id == iName) then
 					break
 				end
 			end
 			if filterh and not id then
 				for z=1,60 do --60 because i can and it breaks when there are no more buffs anyway
-					buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = UnitAura(unit, z, filterh)
+					buffName, _, iconTexture, count, dispelType, duration, expirationTime,_,_,_,id = TellMeWhen_UnitAura(unit, z, filterh)
 					if (not id) or (id == iName) then
 						break
 					end
@@ -2531,6 +2531,16 @@ function TellMeWhen_SkinCallback(arg, SkinID, Gloss, Backdrop, Group, Button, Co
 		TellMeWhen_Update()
 	else
 		TMW.DontRun = false
+	end
+end
+
+function TellMeWhen_UnitAura(units, ...)
+	for _, unit in pairs(TellMeWhen_SplitNames(units)) do
+		local result = {UnitAura(unit, ...)}
+		
+		if (unpack(result)) then
+			return unpack(result)
+		end
 	end
 end
 
