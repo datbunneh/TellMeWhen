@@ -1338,7 +1338,7 @@ function TellMeWhen_Icon_Update(icon, groupID, iconID)
 			TellMeWhen_Icon_Bars_Update(icon, groupID, iconID)
 			icon.cooldownbar:SetValue(0)
 			icon.powerbar:SetValue(0)
-			
+			icon.countText:Show()
 			icon.texture:SetTexture("Interface\\Icons\\LevelUpIcon-LFD")
 			
 			for k,v in pairs(icon.Icons) do
